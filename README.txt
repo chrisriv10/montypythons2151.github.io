@@ -1,33 +1,30 @@
-Hyperspace by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# Monty Pythons - FRC Team 2151
 
+Official website for **FRC Team 2151: Monty Pythons** from Proviso Mathematics and Science Academy in Forest Park, IL.
 
-So I've had the wireframe for this particular design kicking around for some time, but with all
-the other interesting (and in some cases, semi-secret) projects I've been working on it took me
-a little while to get to actually designing and coding it. Fortunately, things have eased up
-enough for me to finaly get around to it, so I'm happy to introduce Hyperspace: a fun, blocky,
-one-page design with a lot of color, a bit of animation, and an additional "generic" page template
-(because hey, even one-page sites usually need an interior page or two). Hope you dig it :)
+## About
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+FIRST Robotics Competition team dedicated to engineering, programming, leadership, and inspiring the next generation of innovators.
 
-(* = not included)
+## Pages
 
-AJ
-aj@lkn.io | @ajlkn
+- **Home** (`index.html`) - Departments overview, contact info
+- **About** (`about.html`) - Team history, values, and achievements
+- **Our Robot** (`monty.html`) - Monty's details for the 2026 REBUILT season
+- **Sponsors** (`sponsors.html`) - Sponsor recognition and partnership info
+- **Donate** (`donate.html`) - Support the team
+- **Reference** (`Reference.html`) - Technical documentation
 
+## Contact
 
-Credits:
+- **Email:** pmsarobotics@gmail.com
+- **Phone:** (708) 338-4100
+- **Address:** 8601 Roosevelt Road, Forest Park, IL 60130
+- **GitHub:** [Team-2151-Progrraming-Room](https://github.com/Team-2151-Progrraming-Room)
+- **Twitter/X:** [@frcteam2151](https://x.com/frcteam2151)
+- **Instagram:** [@montypythons2151](https://www.instagram.com/montypythons2151/)
 
-	Demo Images:
-		Unsplash (unsplash.com)
+## Stack
 
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+- HTML/CSS/JS 
+- Hosted on GitHub Pages at `montypythons2151.github.io`

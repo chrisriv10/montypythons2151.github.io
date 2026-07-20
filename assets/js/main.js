@@ -8,7 +8,8 @@
 
 	var	$window = $(window),
 		$body = $('body'),
-		$sidebar = $('#sidebar');
+		$sidebar = $('#sidebar'),
+		$header = $('#header');
 
 	// Breakpoints.
 		breakpoints({
@@ -18,6 +19,35 @@
 			small:    [ '481px',   '736px'  ],
 			xsmall:   [ null,      '480px'  ]
 		});
+
+	// Mobile nav toggle (for pages with #header)
+	if ($header.length > 0) {
+		// Inject hamburger button into header nav
+		$header.find('nav').prepend('<button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav"></button>');
+		
+		var $navToggle = $header.find('.mobile-nav-toggle');
+		var $nav = $header.find('nav');
+		
+		$navToggle.on('click', function() {
+			var isOpen = $nav.hasClass('open');
+			$nav.toggleClass('open');
+			$navToggle.attr('aria-expanded', !isOpen);
+		});
+		
+		// Close nav when clicking a link
+		$nav.find('a').on('click', function() {
+			$nav.removeClass('open');
+			$navToggle.attr('aria-expanded', 'false');
+		});
+		
+		// Close nav on resize to desktop
+		$window.on('resize', function() {
+			if (!breakpoints.active('<=small')) {
+				$nav.removeClass('open');
+				$navToggle.attr('aria-expanded', 'false');
+			}
+		});
+	}
 
 	// Hack: Enable IE flexbox workarounds.
 		if (browser.name == 'ie')

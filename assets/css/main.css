@@ -4455,3 +4455,190 @@ input, select, textarea {
     background: linear-gradient(135deg, #2b0f45, #3d1660);
     border-radius: 12px;
 }
+
+/* ==========================================================================
+   Mobile Improvements (≤736px)
+   ========================================================================== */
+@media screen and (max-width: 736px) {
+
+  /* Header — compact, logo left, hamburger right */
+  #header {
+    padding: 0.75em 1em;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+  #header > .title img {
+    max-height: 3.5em;
+  }
+  #header > .header-brand {
+    font-size: 1.1em;
+    margin-left: 0.5em;
+    white-space: normal;
+  }
+  #header > nav {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+    margin-top: 0.5em;
+  }
+  #header > nav.open {
+    display: block;
+  }
+  #header > nav > ul {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  #header > nav > ul > li a {
+    font-size: 0.75em;
+    padding: 0.5em 1em;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2em;
+  }
+
+  /* Hamburger button (injected via JS, but style here) */
+  .mobile-nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;
+    height: 2.5em;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 0.5em;
+    color: #fff;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  .mobile-nav-toggle:before {
+    content: "\f0c9";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 1.1em;
+  }
+  .mobile-nav-toggle[aria-expanded="true"]:before {
+    content: "\f00d";
+  }
+
+  /* Intro — centered, no left margin, smaller padding */
+  #intro > .inner {
+    margin-left: 0 !important;
+    padding-top: 4em !important;
+    text-align: center;
+  }
+  #intro h1 {
+    font-size: 2.2em !important;
+    margin-bottom: 0.4em;
+  }
+  #intro p {
+    font-size: 1em !important;
+    max-width: 100%;
+  }
+  #intro .actions {
+    justify-content: center;
+  }
+
+  /* Spotlights (#one) — stack image above text, full width */
+  #one.spotlights > section {
+    display: block !important;
+    min-height: 0 !important;
+  }
+  #one.spotlights > section > .image {
+    width: 100% !important;
+    height: 20em !important;
+    min-height: 16em;
+  }
+  #one.spotlights > section > .content {
+    width: 100% !important;
+    padding: 2em 1.25em 1.5em 1.25em !important;
+  }
+
+  /* Departments (#two) — single column cards, comfortable padding */
+  #two .features {
+    display: block !important;
+  }
+  #two .features section {
+    width: 100% !important;
+    margin: 0.75em 0 !important;
+    padding: 1.75em 1.25em 1.25em 1.25em !important;
+    border-left: none !important;
+    border-top: solid 1px rgba(255,255,255,0.15) !important;
+  }
+  #two .features section:first-child {
+    border-top: none !important;
+  }
+  #two .features section .icon {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    display: inline-block;
+    margin-bottom: 0.75em;
+  }
+  #two .features section h3 {
+    font-size: 1.1em;
+    margin-bottom: 0.4em;
+  }
+  #two .features section p {
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+
+  /* Contact (#three) — stack form and info, center logos */
+  #three .split.style1 {
+    display: block !important;
+  }
+  #three .split.style1 > * {
+    width: 100% !important;
+    padding: 0 !important;
+    border: none !important;
+    margin: 0 0 2em 0 !important;
+  }
+  #three .split.style1 > :first-child {
+    margin-bottom: 2em !important;
+  }
+  #three form > .fields > .field.half {
+    width: 100% !important;
+  }
+  #three textarea {
+    min-height: 10em !important;
+  }
+  .contact-logo-row {
+    flex-direction: column !important;
+    gap: 1.25em !important;
+    padding: 1.5em 0 !important;
+  }
+  .contact-logo-row img {
+    max-height: 7em !important;
+    max-width: 14em !important;
+  }
+
+  /* Footer — centered, wrapped links */
+  #footer .menu {
+    gap: 0.5em 1em !important;
+  }
+  #footer .menu a {
+    font-size: 0.65em !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* General spacing reductions */
+  .wrapper > .inner {
+    padding: 2.5em 1.25em 1.5em 1.25em !important;
+  }
+  .spotlights > section > .content {
+    padding: 2.5em 1.25em 1.5em 1.25em !important;
+  }
+
+  /* Monty page profile stack */
+  .monty-profile {
+    display: block !important;
+  }
+  .monty-profile > img {
+    max-height: 22em !important;
+    margin-bottom: 1.5em;
+  }
+  .monty-stats {
+    margin-top: 1.5em !important;
+  }
+}
