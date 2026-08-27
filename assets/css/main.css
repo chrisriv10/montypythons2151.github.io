@@ -118,11 +118,53 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
+	/* Smooth anchor scrolling (respects reduced motion) */
+	@media (prefers-reduced-motion: no-preference) {
+		html { scroll-behavior: smooth; }
+	}
+
+	/* Global reduced motion: disable all animations/transitions */
+	@media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+
 	body {
 		background: #312450;
 	}
 
-		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+	/* Selection color branding */
+	::selection {
+		background: #ffd84d;
+		color: #312450;
+	}
+::-moz-selection {
+		background: #ffd84d;
+		color: #312450;
+	}
+
+	/* Custom scrollbar (WebKit) */
+	::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+	::-webkit-scrollbar-track {
+		background: rgba(49, 36, 80, 0.3);
+	}
+	::-webkit-scrollbar-thumb {
+		background: #ffd84d;
+		border-radius: 4px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #ffd84d;
+		opacity: 0.8;
+	}
+
+	body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
 			-ms-animation: none !important;
@@ -1870,11 +1912,22 @@ input, select, textarea {
 		position: relative;
 		text-align: center;
 		text-decoration: none;
-		text-transform: uppercase;
+text-transform: uppercase;
 		white-space: nowrap;
 	}
 
-		input[type="submit"]:after,
+	/* Focus visible states for accessibility */
+	.button:focus-visible,
+	input:focus-visible,
+	textarea:focus-visible,
+	select:focus-visible,
+	.flip-toggle:focus-visible,
+	.mobile-nav-toggle:focus-visible {
+		outline: 2px solid #ffd84d;
+		outline-offset: 2px;
+	}
+
+	input[type="submit"]:after,
 		input[type="reset"]:after,
 		input[type="button"]:after,
 		button:after,
@@ -4334,6 +4387,40 @@ input, select, textarea {
     }
 }
 
+/* Compact sponsor bar below footer */
+.sponsor-bar {
+    left: 50%;
+    margin: 0 0 0 -50vw;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    background: rgba(49, 36, 80, 0.95);
+}
+
+.sponsor-bar-track {
+    animation: sponsorBarMarquee 15s linear infinite;
+    display: flex;
+    width: max-content;
+}
+
+.sponsor-bar-track img {
+    background: transparent;
+    flex: 0 0 10em;
+    height: 5em;
+    object-fit: contain;
+    padding: 1em 1.5em;
+    width: 10em;
+}
+
+@keyframes sponsorBarMarquee {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 #two .features .icon {
     color: #5e42a6 !important;
 }
@@ -4405,6 +4492,79 @@ input, select, textarea {
     border-top: 0;
 }
 
+.flip-card {
+    perspective: 1200px;
+    position: relative;
+}
+
+.flip-inner {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.monty-stats.flipped .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-face {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-back {
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotateY(180deg);
+}
+
+.flip-toggle {
+    background: rgba(255, 255, 255, 0.12);
+    border: solid 1px rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    color: #ffd84d;
+    cursor: pointer;
+    height: 2.5em;
+    padding: 0;
+    position: absolute;
+    right: 0.9em;
+    top: 0.9em;
+    width: 2.5em;
+    z-index: 2;
+}
+
+.flip-toggle:hover,
+.flip-toggle:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
+    outline: 0;
+}
+
+.flip-toggle svg {
+    display: block;
+    margin: auto;
+    transition: transform 0.6s ease;
+}
+
+.flip-toggle.flipped svg {
+    transform: rotate(180deg);
+}
+
+.flip-front h2,
+.flip-back h2 {
+    padding-right: 2.2em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .flip-inner,
+    .flip-toggle svg {
+        transition: none;
+    }
+}
+
 @media screen and (max-width: 980px) {
 
     #header > .header-brand {
@@ -4459,6 +4619,12 @@ input, select, textarea {
 /* ==========================================================================
    Mobile Improvements (≤736px)
    ========================================================================== */
+
+/* Base mobile nav toggle - hidden on desktop */
+.mobile-nav-toggle {
+    display: none;
+}
+
 @media screen and (max-width: 736px) {
 
   /* Header — compact, logo left, hamburger right */
@@ -4510,15 +4676,41 @@ input, select, textarea {
     color: #fff;
     cursor: pointer;
     margin-left: auto;
+    position: relative;
+  }
+  /* CSS-only hamburger icon (no Font Awesome dependency) */
+  .mobile-nav-toggle:before,
+  .mobile-nav-toggle:after,
+  .mobile-nav-toggle span {
+    content: "";
+    position: absolute;
+    left: 0.5em;
+    right: 0.5em;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease, bottom 0.2s ease;
   }
   .mobile-nav-toggle:before {
-    content: "\f0c9";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    font-size: 1.1em;
+    top: 0.55em;
+  }
+  .mobile-nav-toggle:after {
+    bottom: 0.55em;
+  }
+  .mobile-nav-toggle span {
+    top: 50%;
+    transform: translateY(-50%);
   }
   .mobile-nav-toggle[aria-expanded="true"]:before {
-    content: "\f00d";
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .mobile-nav-toggle[aria-expanded="true"]:after {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+  .mobile-nav-toggle[aria-expanded="true"] span {
+    opacity: 0;
   }
 
   /* Intro — centered, no left margin, smaller padding */
@@ -4641,4 +4833,27 @@ input, select, textarea {
   .monty-stats {
     margin-top: 1.5em !important;
   }
+}
+
+/* Print styles */
+@media print {
+	#header, #footer, .sponsor-bar, .sponsor-slideshow, .flip-toggle, .mobile-nav-toggle, nav, .actions {
+		display: none !important;
+	}
+	body {
+		background: white !important;
+		color: black !important;
+	}
+	.wrapper > .inner, .spotlights > section > .content {
+		padding: 0 !important;
+	}
+	a {
+		text-decoration: underline !important;
+		color: black !important;
+	}
+	a[href^="http"]::after {
+		content: " (" attr(href) ")";
+		font-size: 0.8em;
+		color: #666;
+	}
 }
