@@ -13,7 +13,7 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css?v=3" />
+	<link rel="stylesheet" href="assets/css/main.css?v=4" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -34,7 +34,6 @@
 				<li><a href="index.html#two">Departments</a></li>
 				<li><a href="index.html#three">Contact Us</a></li>
 				<li><a href="sponsors.html">Sponsors</a></li>
-				<li><a href="donate.html">Donate</a></li>
 				<li><a href="https://teamlocker.squadlocker.com/stores/pmsa-robotics-2288973#/lockers/pmsa-robotics-2288973" target="_blank">Store</a></li>
 				<li><a href="https://docs-montypythons2151.github.io/" target="_blank">FRC Documentation</a></li>
 			</ul>
@@ -48,18 +47,36 @@
 				<h1 class="major">Meet Monty</h1>
 				<section class="monty-profile">
 					<img src="assets/css/images/Robot.png" alt="Monty" />
-					<div class="monty-stats">
-						<h2>2026 Midwest Regional Performance</h2>
-						<ul>
-							<li><strong>Event:</strong> Midwest Regional Presented by Baxter</li>
-							<li><strong>Location:</strong> Arlington Heights, Illinois</li>
-							<li><strong>Dates:</strong> March 25-28, 2026</li>
-							<li><strong>Qualification Rank:</strong> 28 of 35</li>
-							<li><strong>Record:</strong> 4 wins, 6 losses, 0 ties</li>
-							<li><strong>Regional Pool Points:</strong> 9</li>
-							<li><strong>Playoffs:</strong> Did not participate</li>
-						</ul>
-						<img src="assets/css/images/FRCRebuilt.png" alt="2026 REBUILT season logo" class="rebuilt-logo" />
+					<div class="monty-stats flip-card">
+						<button class="flip-toggle" type="button" aria-label="Show off-season stats" aria-expanded="false">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18" /></svg>
+						</button>
+						<div class="flip-inner">
+							<div class="flip-face flip-front">
+								<h2>2026 Midwest Regional Performance</h2>
+								<ul>
+									<li><strong>Event:</strong> Midwest Regional Presented by Baxter</li>
+									<li><strong>Location:</strong> Arlington Heights, Illinois</li>
+									<li><strong>Dates:</strong> March 25-28, 2026</li>
+									<li><strong>Qualification Rank:</strong> 28 of 35</li>
+									<li><strong>Record:</strong> 4 wins, 6 losses, 0 ties</li>
+									<li><strong>Regional Pool Points:</strong> 9</li>
+									<li><strong>Playoffs:</strong> Did not participate</li>
+								</ul>
+								<img src="assets/css/images/FRCRebuilt.png" alt="2026 REBUILT season logo" class="rebuilt-logo" loading="lazy" />
+							</div>
+							<div class="flip-face flip-back">
+								<h2>2026 Rock River Robotics Off-Season</h2>
+								<ul>
+									<li><strong>Event:</strong> Rock River Robotics Off-Season Competition</li>
+									<li><strong>Location:</strong> Rockford, Illinois</li>
+									<li><strong>Dates:</strong> July 24-25, 2026</li>
+									<li><strong>Qualification Rank:</strong> 9 of 25</li>
+									<li><strong>Record:</strong> 3 wins, 2 losses, 0 ties</li>
+									<li><strong>Playoffs:</strong> Alliance 5 — eliminated in Round 1</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</section>
 			</div>
@@ -73,10 +90,29 @@
 				<li><a href="index.html">Home</a></li>
 				<li><a href="about.html">About Us</a></li>
 				<li><a href="sponsors.html">Sponsors</a></li>
-				<li><a href="donate.html">Donate</a></li>
+				<li><a href="index.html#three">Contact Us</a></li>
 			</ul>
 		</div>
 	</footer>
+
+	<div class="sponsor-bar" aria-label="Sponsor logos">
+		<div class="sponsor-bar-track">
+			<img src="assets/css/images/2151statefarm.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151honeywell.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151triton.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151pths.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151molex.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151belden.jpg" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151Zog.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151statefarm.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151honeywell.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151triton.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151pths.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151molex.png" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151belden.jpg" alt="" aria-hidden="true" />
+			<img src="assets/css/images/2151Zog.png" alt="" aria-hidden="true" />
+		</div>
+	</div>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
@@ -86,6 +122,21 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js?v=2"></script>
+	<script>
+		(function () {
+			var card = document.querySelector('.monty-stats');
+			var toggle = document.querySelector('.flip-toggle');
+			if (!card || !toggle) {
+				return;
+			}
+			toggle.addEventListener('click', function () {
+				var flipped = card.classList.toggle('flipped');
+				toggle.classList.toggle('flipped', flipped);
+				toggle.setAttribute('aria-expanded', flipped ? 'true' : 'false');
+				toggle.setAttribute('aria-label', flipped ? 'Show regional stats' : 'Show off-season stats');
+			});
+		})();
+	</script>
 
 </body>
 

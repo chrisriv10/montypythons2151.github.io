@@ -32,7 +32,6 @@
 							<li><a href="#two">Departments</a></li>
 							<li><a href="#three">Contact Us</a></li>
 							<li><a href="sponsors.html">Sponsors</a></li>
-							<li><a href="donate.html">Donate</a></li>
 							<li><a href="https://teamlocker.squadlocker.com/stores/pmsa-robotics-2288973#/lockers/pmsa-robotics-2288973" target="_blank">Store</a></li>
 							<li><a href="https://docs-montypythons2151.github.io/" target="_blank">FRC Documentation</a></li>
 						</ul>
@@ -134,24 +133,33 @@
 							<p> We would love to hear from you! Whether you wish to sponsor us or learn more about our team, feel free to reach out to us.</p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<form id="contact-form">
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
+												<input type="text" name="name" id="name" required />
 											</div>
 											<div class="field half">
 												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
+												<input type="email" name="email" id="email" required />
 											</div>
 											<div class="field">
 												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
+												<textarea name="message" id="message" rows="5" required></textarea>
 											</div>
 										</div>
-										<ul class="actions">
-											<li><a href="mailto:pmsarobotics@gmail.com" class="button submit">Send Message</a></li>
+
+										<!-- Web3Forms configuration (https://web3forms.com) -->
+										<input type="hidden" name="access_key" value="cd7800e6-b352-474c-8bc8-ef5bbd9a9387" />
+										<input type="hidden" name="subject" value="New message from the FRC 2151 website" />
+										<input type="hidden" name="from_name" value="FRC 2151 Contact Form" />
+										<input type="hidden" name="cc" value="pmsarobotics@gmail.com" />
+										<input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
+										<ul class="actions special">
+											<li><button type="submit" class="button submit">Send Message</button></li>
 										</ul>
+										<p id="contact-form-status" style="margin-top: 1em;"></p>
 									</form>
 								</section>
 								<section>
@@ -188,11 +196,11 @@
 						</div>
 						<div class="contact-logo-row" aria-label="Team logos">
     <a href="https://www.firstinspires.org/programs/frc/" target="_blank">
-        <img src="assets/css/images/2151FRCLogo.svg" alt="FIRST Robotics Competition logo">
+        <img src="assets/css/images/2151FRCLogo.svg" alt="FIRST Robotics Competition logo" loading="lazy">
     </a>
 
     <a href="index.html">
-        <img src="assets/css/images/2151Logo.png" alt="FRC Team 2151 Monty Pythons logo">
+        <img src="assets/css/images/2151Logo.png" alt="FRC Team 2151 Monty Pythons logo" loading="lazy">
     </a>
 </div>
 			</div>
@@ -205,10 +213,29 @@
 						<li><a href="#one">About Us</a></li>
 						<li><a href="#two">Departments</a></li>
 						<li><a href="sponsors.html">Sponsors</a></li>
-						<li><a href="donate.html">Donate</a></li>
+						<li><a href="#three">Contact Us</a></li>
 					</ul>
 				</div>
 			</footer>
+
+			<div class="sponsor-bar" aria-label="Sponsor logos">
+				<div class="sponsor-bar-track">
+					<img src="assets/css/images/2151statefarm.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151honeywell.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151triton.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151pths.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151molex.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151belden.jpg" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151Zog.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151statefarm.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151honeywell.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151triton.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151pths.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151molex.png" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151belden.jpg" alt="" aria-hidden="true" />
+					<img src="assets/css/images/2151Zog.png" alt="" aria-hidden="true" />
+				</div>
+			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -218,6 +245,59 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js?v=2"></script>
+
+			<script>
+				(function () {
+					var form = document.getElementById('contact-form');
+					var status = document.getElementById('contact-form-status');
+					if (!form) return;
+
+					form.addEventListener('submit', function (e) {
+						e.preventDefault();
+
+						var accessKey = form.querySelector('input[name="access_key"]').value;
+						if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY_HERE') {
+							status.style.color = '#ff6b6b';
+							status.textContent = 'Form is not configured yet. Please email pmsarobotics@gmail.com directly.';
+							return;
+						}
+
+						status.style.color = '';
+						status.textContent = 'Sending...';
+
+						var formData = new FormData(form);
+						var payload = Object.fromEntries(formData);
+
+						fetch('https://api.web3forms.com/submit', {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+								Accept: 'application/json'
+							},
+							body: JSON.stringify(payload)
+						})
+							.then(function (response) {
+								return response.json().then(function (data) {
+									return { ok: response.ok, data: data };
+								});
+							})
+							.then(function (result) {
+								if (result.ok) {
+									status.style.color = '#3adb76';
+									status.textContent = "Thanks! Your message has been sent — we'll get back to you soon.";
+									form.reset();
+								} else {
+									status.style.color = '#ff6b6b';
+									status.textContent = (result.data && result.data.message) || 'Something went wrong. Please try again or email us directly.';
+								}
+							})
+							.catch(function () {
+								status.style.color = '#ff6b6b';
+								status.textContent = 'Something went wrong. Please try again or email us directly.';
+							});
+					});
+				})();
+			</script>
 
 	</body>
 </html>
