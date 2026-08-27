@@ -2,6 +2,8 @@
   width: min(100%, 54em);
   overflow: hidden;
   margin: 2em auto 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 1em 2.5em rgba(30, 10, 55, 0.22);
 }
 
 .track {
@@ -18,10 +20,29 @@
 }
 
 @keyframes slide {
-  0%, 20% { transform: translateX(0); }
-  25%, 45% { transform: translateX(-100%); }
-  50%, 70% { transform: translateX(-200%); }
-  75%, 95% { transform: translateX(-300%); }
+  0%, 28% { transform: translateX(0); }
+  33%, 61% { transform: translateX(-100%); }
+  66%, 94% { transform: translateX(-200%); }
   100% { transform: translateX(0); }
+}
+
+@media screen and (max-width: 736px) {
+  .carousel {
+    margin-top: 1.5rem;
+  }
+
+  .track img {
+    height: clamp(14rem, 72vw, 24rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+
+  .track img:not(:first-child) {
+    display: none;
+  }
 }
 

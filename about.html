@@ -12,14 +12,12 @@
     <link rel="icon" type="image/png" href="assets/css/images/2151Logo.png" />
 
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css?v=3" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css?v=10" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
-	<carousel>
-		<link rel="stylesheet" href="assets/css/carousel.css" />
-	</carousel>
+	<link rel="stylesheet" href="assets/css/carousel.css?v=2" />
 </head>
 
 <body class="is-preload">
@@ -30,7 +28,10 @@
 			<img src="assets/css/images/2151Logo.png" alt="Home" height="200px">
 		</a>
 		<a href="index.html" class="header-brand">FRC 2151 - Monty Pythons</a>
-		<nav>
+		<button class="mobile-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+			<span aria-hidden="true"></span>
+		</button>
+		<nav id="mobile-nav">
 			<ul>
 				<li><a href="index.html">Home</a></li>
 				<li><a href="about.html" class = "active">About Us</a></li>
@@ -39,10 +40,6 @@
 				<li><a href="sponsors.html">Sponsors</a></li>
 				<li><a href="https://teamlocker.squadlocker.com/stores/pmsa-robotics-2288973#/lockers/pmsa-robotics-2288973" target="_blank">Store</a></li>
 				<li><a href="https://docs-montypythons2151.github.io/" target="_blank">FRC Documentation</a></li>
-
-
-				
-				
 			</ul>
 		</nav>
 	</header>
@@ -52,26 +49,20 @@
 		<section id="main" class="wrapper style1 fade-up">
 			<div class="inner">
 				<h1 class="major">Our Team</h1>
-				<section>
-					<p style="color: white;">We are FRC Team 2151, the Monty Pythons, the robotics team of Proviso Mathematics and Science Academy in Forest Park, Illinois. Since our rookie season in 2007, the Monty Pythons have brought together students with a passion for engineering, programming, design, business, and leadership to compete in one of the world’s largest high school robotics competitions. Built on the values of innovation, collaboration, and gracious professionalism, our team gives students hands-on experience designing, manufacturing, wiring, and programming competitive robots while preparing for future careers in STEM and beyond. <br> <br>
-Over the years, the Monty Pythons have proudly represented both PMSA and the Forest Park community at regional competitions across Illinois and the Midwest. Our history includes earning the Rookie Inspiration Award in our very first season in 2007, the Judges’ Award in 2009, the Team Spirit Award in 2018, and a Regional Finalist finish in 2012. During the 2012 Midwest Regional, our robot “Monty VI” advanced to the finals alongside some of the strongest teams in the region, marking one of the most memorable accomplishments in team history. Even through challenges—including rebuilding seasons and the loss of beloved teacher and mentor Tom Dix in 2009—the Monty Pythons have continued to grow through resilience, creativity, and teamwork. <br> <br>
-As part of one of Illinois’ top-ranked selective enrollment STEM schools, the Monty Pythons reflect the spirit of PMSA: curiosity, perseverance, and academic excellence. Our students come from various towns and work together to solve real engineering problems under intense deadlines, learning skills in CAD, fabrication, electronics, software development, project management, and marketing. More than just building robots, we are committed to inspiring younger students, supporting STEM education, and creating an environment where every member can learn, lead, and innovate. Whether we are in the workshop late at night, competing on the field, or mentoring future engineers, the Monty Pythons strive to represent PMSA with pride and continue building a legacy that has lasted nearly two decades.</p>
-<div class="carousel">
+				<section class="about-copy">
+					<p>We are FRC Team 2151, the Monty Pythons, the robotics team of Proviso Mathematics and Science Academy in Forest Park, Illinois. Since our rookie season in 2007, the Monty Pythons have brought together students with a passion for engineering, programming, design, business, and leadership to compete in one of the world’s largest high school robotics competitions. Built on the values of innovation, collaboration, and gracious professionalism, our team gives students hands-on experience designing, manufacturing, wiring, and programming competitive robots while preparing for future careers in STEM and beyond.</p>
+					<p>Over the years, the Monty Pythons have proudly represented both PMSA and the Forest Park community at regional competitions across Illinois and the Midwest. Our history includes earning the Rookie Inspiration Award in our very first season in 2007, the Judges’ Award in 2009, the Team Spirit Award in 2018, and a Regional Finalist finish in 2012. During the 2012 Midwest Regional, our robot “Monty VI” advanced to the finals alongside some of the strongest teams in the region, marking one of the most memorable accomplishments in team history. Even through challenges—including rebuilding seasons and the loss of beloved teacher and mentor Tom Dix in 2009—the Monty Pythons have continued to grow through resilience, creativity, and teamwork.</p>
+					<p>As part of one of Illinois’ top-ranked selective enrollment STEM schools, the Monty Pythons reflect the spirit of PMSA: curiosity, perseverance, and academic excellence. Our students come from various towns and work together to solve real engineering problems under intense deadlines, learning skills in CAD, fabrication, electronics, software development, project management, and marketing. More than just building robots, we are committed to inspiring younger students, supporting STEM education, and creating an environment where every member can learn, lead, and innovate. Whether we are in the workshop late at night, competing on the field, or mentoring future engineers, the Monty Pythons strive to represent PMSA with pride and continue building a legacy that has lasted nearly two decades.</p>
+					<div class="carousel">
 						<div class="track">
 							<img src="assets/css/images/Robot.png" alt="Team robot" loading="lazy" />
 							<img src="assets/css/images/2151TeamPhoto.JPG" alt="Team photo" loading="lazy" />
 							<img src="assets/css/images/2151Pit.jpg" alt="Team pit area" loading="lazy" />
 						</div>
 					</div>
-					</div>
 				</section>
 			</div>
 		</section>
-	</div>
-
-	<!-- Main -->
-
-
 	</div>
 
 	<!-- Footer -->
@@ -112,7 +103,7 @@ As part of one of Illinois’ top-ranked selective enrollment STEM schools, the 
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js?v=2"></script>
+	<script src="assets/js/main.js?v=5"></script>
 
 </body>
 

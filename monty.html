@@ -12,8 +12,8 @@
      <link rel="icon" type="image/png" href="assets/css/images/2151Logo.png" />
 
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css?v=4" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css?v=10" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -27,7 +27,10 @@
 			<img src="assets/css/images/2151Logo.png" alt="Home" height="200px">
 		</a>
 		<a href="index.html" class="header-brand">FRC 2151 - Monty Pythons</a>
-		<nav>
+		<button class="mobile-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+			<span aria-hidden="true"></span>
+		</button>
+		<nav id="mobile-nav">
 			<ul>
 				<li><a href="index.html">Home</a></li>
 				<li><a href="about.html">About Us</a></li>
@@ -121,7 +124,7 @@
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js?v=2"></script>
+	<script src="assets/js/main.js?v=5"></script>
 	<script>
 		(function () {
 			var card = document.querySelector('.monty-stats');

@@ -22,30 +22,52 @@
 
 	// Mobile nav toggle (for pages with #header)
 	if ($header.length > 0) {
-		// Inject hamburger button into header nav
-		$header.find('nav').prepend('<button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav"></button>');
-		
-		var $navToggle = $header.find('.mobile-nav-toggle');
-		var $nav = $header.find('nav');
-		
+		var $nav = $header.find('nav').first(),
+			$navToggle = $header.find('.mobile-nav-toggle').first();
+
+		if ($nav.length > 0 && !$nav.attr('id'))
+			$nav.attr('id', 'mobile-nav');
+
+		// Keep legacy/template pages usable if they do not include the toggle markup.
+		if ($nav.length > 0 && $navToggle.length === 0) {
+			$navToggle = $('<button class="mobile-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="' + $nav.attr('id') + '"><span aria-hidden="true"></span></button>');
+			$navToggle.insertBefore($nav);
+		}
+
+		function closeMobileNav(returnFocus) {
+			$nav.removeClass('open');
+			$navToggle.attr({
+				'aria-expanded': 'false',
+				'aria-label': 'Open navigation'
+			});
+
+			if (returnFocus)
+				$navToggle.trigger('focus');
+		}
+
 		$navToggle.on('click', function() {
 			var isOpen = $nav.hasClass('open');
 			$nav.toggleClass('open');
-			$navToggle.attr('aria-expanded', !isOpen);
+			$navToggle.attr({
+				'aria-expanded': isOpen ? 'false' : 'true',
+				'aria-label': isOpen ? 'Open navigation' : 'Close navigation'
+			});
 		});
-		
+
 		// Close nav when clicking a link
 		$nav.find('a').on('click', function() {
-			$nav.removeClass('open');
-			$navToggle.attr('aria-expanded', 'false');
+			closeMobileNav(false);
 		});
-		
+
+		$window.on('keydown', function(event) {
+			if (event.key === 'Escape' && $nav.hasClass('open'))
+				closeMobileNav(true);
+		});
+
 		// Close nav on resize to desktop
 		$window.on('resize', function() {
-			if (!breakpoints.active('<=small')) {
-				$nav.removeClass('open');
-				$navToggle.attr('aria-expanded', 'false');
-			}
+			if (!breakpoints.active('<=small'))
+				closeMobileNav(false);
 		});
 	}
 
