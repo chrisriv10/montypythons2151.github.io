@@ -157,7 +157,7 @@
 										<input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
 
 					<ul class="actions special">
-						<li><button type="submit" class="button submit" id="contact-submit-btn">Send Message</button></li>
+						<li><button type="submit" class="button" id="contact-submit-btn">Send Message</button></li>
 					</ul>
 					</form>
 				</section>
@@ -203,54 +203,6 @@
     </a>
 </div>
 		</div>
-
-		<!-- Success Popup Modal -->
-		<div id="success-popup" style="
-			display: none;
-			position: fixed;
-			top: 0; left: 0; right: 0; bottom: 0;
-			z-index: 9999;
-			background: rgba(0,0,0,0.55);
-			align-items: center;
-			justify-content: center;
-		">
-			<div id="success-popup-box" style="
-				background: #1a1a2e;
-				border: 2px solid #7c4dff;
-				border-radius: 12px;
-				padding: 2.5em 3em;
-				max-width: 420px;
-				width: 90%;
-				text-align: center;
-				box-shadow: 0 8px 40px rgba(124,77,255,0.35);
-				transform: scale(0.85);
-				opacity: 0;
-				transition: transform 0.25s ease, opacity 0.25s ease;
-			">
-				<div style="
-					width: 64px; height: 64px;
-					border-radius: 50%;
-					background: linear-gradient(135deg, #7c4dff, #3d1660);
-					display: flex; align-items: center; justify-content: center;
-					margin: 0 auto 1.2em;
-					font-size: 2em;
-					color: #fff;
-				">&#10003;</div>
-				<h3 style="margin: 0 0 0.5em; color: #fff; font-size: 1.4em;">Message Sent!</h3>
-				<p style="margin: 0 0 1.5em; color: #ccc; font-size: 0.95em;">Thanks for reaching out — we'll get back to you soon.</p>
-				<button id="success-popup-close" style="
-					background: linear-gradient(135deg, #7c4dff, #3d1660);
-					color: #fff;
-					border: none;
-					border-radius: 6px;
-					padding: 0.6em 2em;
-					font-size: 1em;
-					cursor: pointer;
-					transition: opacity 0.2s;
-				" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Close</button>
-			</div>
-		</div>
-
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
@@ -282,6 +234,16 @@
 					<img src="assets/css/images/2151Zog.png" alt="" aria-hidden="true" />
 				</div>
 			</div>
+
+		<!-- Success Popup Modal -->
+		<div id="success-popup" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(30,10,55,0.75);align-items:center;justify-content:center;">
+			<div id="success-popup-box" style="background:#312450;border:2px solid #663eca;border-radius:12px;padding:2.5em 3em;max-width:420px;width:90%;text-align:center;box-shadow:0 8px 40px rgba(102,62,202,0.5);transform:scale(0.85);opacity:0;transition:transform 0.25s ease,opacity 0.25s ease;">
+				<div style="width:64px;height:64px;border-radius:50%;background:yellow;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2em;font-size:2em;color:#312450;font-weight:bold;">&#10003;</div>
+				<h3 style="margin:0 0 0.5em;color:yellow;font-size:1.4em;">Message Sent!</h3>
+				<p style="margin:0 0 1.5em;color:rgba(255,255,255,0.8);font-size:0.95em;">Thanks for reaching out &mdash; we'll get back to you soon.</p>
+				<button id="success-popup-close" style="background:yellow;color:#312450;border:none;border-radius:6px;padding:0.6em 2em;font-size:1em;cursor:pointer;font-weight:bold;transition:background 0.2s, color 0.2s;" onmouseover="this.style.background='#ffcc00'" onmouseout="this.style.background='yellow'">Close</button>
+			</div>
+		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
