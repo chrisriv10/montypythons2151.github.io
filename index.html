@@ -156,45 +156,44 @@
 										<input type="hidden" name="cc" value="pmsarobotics@gmail.com" />
 										<input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
 
-										<ul class="actions special">
-											<li><button type="submit" class="button submit">Send Message</button></li>
-										</ul>
-										<p id="contact-form-status" style="margin-top: 1em;"></p>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>
-												8601 Roosevelt Road, Forest Park, IL 60130, United States
-											</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="mailto:pmsarobotics@gmail.com" target="_blank">pmsarobotics@gmail.com</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(708) 338-4100</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-											  <li><a href="https://x.com/frcteam2151" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                                   			  <li><a href="https://github.com/Team-2151-Progrraming-Room" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                                  			  <li><a href="https://www.instagram.com/montypythons2151/?hl=en" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-											</ul>
-										</li>
-										<li>
-											<h3>School Website</h3>
-											<a href="https://pmsa.pths209.org/" target="_blank">https://pmsa.pths209.org/</a>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-						<div class="contact-logo-row" aria-label="Team logos">
+					<ul class="actions special">
+						<li><button type="submit" class="button submit" id="contact-submit-btn">Send Message</button></li>
+					</ul>
+					</form>
+				</section>
+				<section>
+						<ul class="contact">
+							<li>
+								<h3>Address</h3>
+								<span>
+									8601 Roosevelt Road, Forest Park, IL 60130, United States
+								</span>
+							</li>
+							<li>
+								<h3>Email</h3>
+								<a href="mailto:pmsarobotics@gmail.com" target="_blank">pmsarobotics@gmail.com</a>
+							</li>
+							<li>
+								<h3>Phone</h3>
+								<span>(708) 338-4100</span>
+							</li>
+							<li>
+								<h3>Social</h3>
+								<ul class="icons">
+								  <li><a href="https://x.com/frcteam2151" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                   	  <li><a href="https://github.com/Team-2151-Progrraming-Room" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                                  	  <li><a href="https://www.instagram.com/montypythons2151/?hl=en" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								</ul>
+							</li>
+							<li>
+								<h3>School Website</h3>
+								<a href="https://pmsa.pths209.org/" target="_blank">https://pmsa.pths209.org/</a>
+							</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+			<div class="contact-logo-row" aria-label="Team logos">
     <a href="https://www.firstinspires.org/programs/frc/" target="_blank">
         <img src="assets/css/images/2151FRCLogo.svg" alt="FIRST Robotics Competition logo" loading="lazy">
     </a>
@@ -203,7 +202,54 @@
         <img src="assets/css/images/2151Logo.png" alt="FRC Team 2151 Monty Pythons logo" loading="lazy">
     </a>
 </div>
+		</div>
+
+		<!-- Success Popup Modal -->
+		<div id="success-popup" style="
+			display: none;
+			position: fixed;
+			top: 0; left: 0; right: 0; bottom: 0;
+			z-index: 9999;
+			background: rgba(0,0,0,0.55);
+			align-items: center;
+			justify-content: center;
+		">
+			<div id="success-popup-box" style="
+				background: #1a1a2e;
+				border: 2px solid #7c4dff;
+				border-radius: 12px;
+				padding: 2.5em 3em;
+				max-width: 420px;
+				width: 90%;
+				text-align: center;
+				box-shadow: 0 8px 40px rgba(124,77,255,0.35);
+				transform: scale(0.85);
+				opacity: 0;
+				transition: transform 0.25s ease, opacity 0.25s ease;
+			">
+				<div style="
+					width: 64px; height: 64px;
+					border-radius: 50%;
+					background: linear-gradient(135deg, #7c4dff, #3d1660);
+					display: flex; align-items: center; justify-content: center;
+					margin: 0 auto 1.2em;
+					font-size: 2em;
+					color: #fff;
+				">&#10003;</div>
+				<h3 style="margin: 0 0 0.5em; color: #fff; font-size: 1.4em;">Message Sent!</h3>
+				<p style="margin: 0 0 1.5em; color: #ccc; font-size: 0.95em;">Thanks for reaching out — we'll get back to you soon.</p>
+				<button id="success-popup-close" style="
+					background: linear-gradient(135deg, #7c4dff, #3d1660);
+					color: #fff;
+					border: none;
+					border-radius: 6px;
+					padding: 0.6em 2em;
+					font-size: 1em;
+					cursor: pointer;
+					transition: opacity 0.2s;
+				" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">Close</button>
 			</div>
+		</div>
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">
@@ -244,36 +290,60 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js?v=2"></script>
+			<script src="assets/js/main.js?v=3"></script>
 
 			<script>
 				(function () {
 					var form = document.getElementById('contact-form');
-					var status = document.getElementById('contact-form-status');
+					var submitBtn = document.getElementById('contact-submit-btn');
+					var popup = document.getElementById('success-popup');
+					var popupBox = document.getElementById('success-popup-box');
+					var closeBtn = document.getElementById('success-popup-close');
+					var autoCloseTimer = null;
+
 					if (!form) return;
+
+					function showPopup() {
+						popup.style.display = 'flex';
+						requestAnimationFrame(function() {
+							requestAnimationFrame(function() {
+								popupBox.style.transform = 'scale(1)';
+								popupBox.style.opacity = '1';
+							});
+						});
+						autoCloseTimer = setTimeout(hidePopup, 5000);
+					}
+
+					function hidePopup() {
+						clearTimeout(autoCloseTimer);
+						popupBox.style.transform = 'scale(0.85)';
+						popupBox.style.opacity = '0';
+						setTimeout(function() { popup.style.display = 'none'; }, 250);
+					}
+
+					closeBtn.addEventListener('click', hidePopup);
+					popup.addEventListener('click', function(e) {
+						if (e.target === popup) hidePopup();
+					});
 
 					form.addEventListener('submit', function (e) {
 						e.preventDefault();
 
 						var accessKey = form.querySelector('input[name="access_key"]').value;
 						if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY_HERE') {
-							status.style.color = '#ff6b6b';
-							status.textContent = 'Form is not configured yet. Please email pmsarobotics@gmail.com directly.';
+							alert('Form is not configured yet. Please email pmsarobotics@gmail.com directly.');
 							return;
 						}
 
-						status.style.color = '';
-						status.textContent = 'Sending...';
+						submitBtn.disabled = true;
+						submitBtn.textContent = 'Sending...';
 
 						var formData = new FormData(form);
 						var payload = Object.fromEntries(formData);
 
 						fetch('https://api.web3forms.com/submit', {
 							method: 'POST',
-							headers: {
-								'Content-Type': 'application/json',
-								Accept: 'application/json'
-							},
+							headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
 							body: JSON.stringify(payload)
 						})
 							.then(function (response) {
@@ -282,22 +352,22 @@
 								});
 							})
 							.then(function (result) {
+								submitBtn.disabled = false;
+								submitBtn.textContent = 'Send Message';
 								if (result.ok) {
-									status.style.color = '#3adb76';
-									status.textContent = "Thanks! Your message has been sent — we'll get back to you soon.";
 									form.reset();
+									showPopup();
 								} else {
-									status.style.color = '#ff6b6b';
-									status.textContent = (result.data && result.data.message) || 'Something went wrong. Please try again or email us directly.';
+									alert((result.data && result.data.message) || 'Something went wrong. Please try again or email us directly.');
 								}
 							})
 							.catch(function () {
-								status.style.color = '#ff6b6b';
-								status.textContent = 'Something went wrong. Please try again or email us directly.';
+								submitBtn.disabled = false;
+								submitBtn.textContent = 'Send Message';
+								alert('Something went wrong. Please try again or email us directly.');
 							});
 					});
 				})();
 			</script>
-
 	</body>
 </html>
