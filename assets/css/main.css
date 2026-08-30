@@ -4215,6 +4215,17 @@ text-transform: uppercase;
     margin-bottom: 2em;
 }
 
+/* Keep the Media introduction as a readable, department-style panel. */
+.media-description {
+    background: linear-gradient(135deg, #2b0f45, #3d1660);
+    border: solid 2px rgba(255, 216, 77, 0.3);
+    border-radius: 14px;
+    color: #ffffff !important;
+    display: table;
+    max-width: 100%;
+    padding: 0.65em 1em;
+}
+
 #two .features section {
     border-radius: 14px;
     margin: 0.75em;
