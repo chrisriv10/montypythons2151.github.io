@@ -4642,6 +4642,58 @@ text-transform: uppercase;
     border-radius: 12px;
 }
 
+/* Sponsor information is grouped into lightweight cards for easier scanning. */
+.sponsor-list {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+}
+
+.sponsor-list li {
+    background: rgba(49, 36, 80, 0.52);
+    border: solid 1px rgba(255, 216, 77, 0.28);
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(22, 12, 46, 0.14);
+    margin: 0;
+    min-height: 3.25rem;
+    padding: 0.8rem 1rem 0.8rem 2rem;
+    position: relative;
+}
+
+.sponsor-list li::before {
+    background: #ffd84d;
+    border-radius: 50%;
+    content: "";
+    height: 0.42rem;
+    left: 0.9rem;
+    position: absolute;
+    top: 1.22rem;
+    width: 0.42rem;
+}
+
+.sponsor-section + .sponsor-section {
+    margin-top: 2.5rem;
+}
+
+/* A slim brand-colored divider preserves the desktop sidebar/main separation. */
+@media screen and (min-width: 1281px) {
+    #sidebar::after {
+        background: #ffd84d;
+        box-shadow: 0 0 0.75rem rgba(255, 216, 77, 0.35);
+        content: "";
+        height: 100%;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 3px;
+        z-index: 2;
+    }
+}
+
 /* ==========================================================================
    Mobile Improvements (≤736px)
    ========================================================================== */
@@ -4655,6 +4707,119 @@ text-transform: uppercase;
 	html,
 	body {
 		min-width: 0;
+	}
+
+	/* Homepage navigation becomes a compact top bar instead of disappearing. */
+	#sidebar {
+		background: #312450;
+		display: block !important;
+		height: 3.75rem;
+		left: auto;
+		overflow: visible;
+		padding: 0;
+		position: sticky;
+		top: 0;
+		width: 100%;
+		z-index: 10000;
+	}
+
+	#sidebar > .inner {
+		align-items: center;
+		display: grid;
+		gap: 0.625rem;
+		grid-template-columns: 3rem minmax(0, 1fr) 2.75rem;
+		height: 3.75rem;
+		min-height: 3.75rem;
+		padding: 0 0.875rem;
+		transform: none;
+	}
+
+	#sidebar .logo-link {
+		display: flex;
+		height: 3rem;
+		margin: 0;
+		width: 3rem;
+	}
+
+	#sidebar .team-logo {
+		border-radius: 0.4rem;
+		height: 3rem;
+		object-fit: contain;
+		width: 3rem;
+	}
+
+	#sidebar .mobile-nav-toggle {
+		grid-column: 3;
+		grid-row: 1;
+		justify-self: end;
+	}
+
+	#sidebar nav {
+		background: #312450;
+		border-top: solid 1px rgba(255, 255, 255, 0.18);
+		display: none;
+		left: 0;
+		line-height: normal;
+		padding: 0.75rem 0.875rem 1rem;
+		position: absolute;
+		text-align: center;
+		top: 3.75rem;
+		width: 100%;
+	}
+
+	#sidebar nav.open {
+		display: block;
+	}
+
+	#sidebar nav > ul {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		height: auto;
+		line-height: normal;
+		margin: 0;
+		padding: 0;
+	}
+
+	#sidebar nav > ul > li,
+	#sidebar nav > ul > li:first-child {
+		height: auto;
+		line-height: normal;
+		margin: 0;
+		padding: 0;
+	}
+
+	#sidebar nav > ul > li a {
+		align-items: center;
+		background: rgba(255, 255, 255, 0.08);
+		border-radius: 999px;
+		display: flex;
+		font-size: 0.72rem;
+		height: auto;
+		justify-content: center;
+		line-height: 1.4;
+		min-height: 2.75rem;
+		padding: 0.65rem 1rem;
+	}
+
+	#sidebar nav > ul > li a:hover,
+	#sidebar nav > ul > li a:focus-visible {
+		background: rgba(255, 255, 255, 0.14);
+		color: #ffffff;
+	}
+
+	#sidebar + #wrapper {
+		padding-top: 0;
+	}
+
+	#intro {
+		min-height: calc(100vh - 3.75rem);
+		min-height: calc(100dvh - 3.75rem);
+	}
+
+	#wrapper > section[id],
+	#wrapper > section > section[id] {
+		scroll-margin-top: 4.25rem;
 	}
 
 	/* Compact subpage header with an accessible expandable menu. */
@@ -4843,6 +5008,17 @@ text-transform: uppercase;
 		padding: 0;
 	}
 
+	/* Keep the hero as the complete first mobile viewport; the next section starts below it. */
+	#wrapper > #intro {
+		min-height: calc(100vh - 3.75rem) !important;
+	}
+
+	@supports (height: 100dvh) {
+		#wrapper > #intro {
+			min-height: calc(100dvh - 3.75rem) !important;
+		}
+	}
+
 	#intro > .inner {
 		margin-left: 0 !important;
 		padding-top: clamp(3rem, 12vw, 5rem) !important;
@@ -5013,6 +5189,15 @@ text-transform: uppercase;
 	}
 
 	/* Footer links remain readable and share one visual baseline. */
+	.sponsor-list {
+		grid-template-columns: 1fr;
+	}
+
+	.sponsor-list li {
+		padding-bottom: 0.85rem;
+		padding-top: 0.85rem;
+	}
+
 	#footer > .inner {
 		padding-bottom: 1.5rem !important;
 		padding-top: 1.5rem !important;
