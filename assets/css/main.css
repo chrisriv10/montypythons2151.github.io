@@ -4304,8 +4304,24 @@ text-transform: uppercase;
 }
 
 #intro .actions .button {
-    border-color: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 0.8em 2em rgba(0, 0, 0, 0.24);
+	background: linear-gradient(rgba(49, 36, 80, 0.78), rgba(49, 36, 80, 0.78)) padding-box, linear-gradient(to right, #ffd84d, #f05bb5, #ffffff) border-box;
+	border: solid 2px transparent !important;
+	box-shadow: 0 0.8em 2em rgba(0, 0, 0, 0.24);
+	color: #ffffff !important;
+}
+
+#intro .actions .button:hover,
+#intro .actions .button:focus-visible {
+	background: linear-gradient(rgba(49, 36, 80, 0.9), rgba(49, 36, 80, 0.9)) padding-box, linear-gradient(to right, #ffd84d, #f05bb5, #ffffff) border-box;
+}
+
+#intro ul.actions {
+	justify-content: center;
+	margin-left: 0;
+}
+
+#intro ul.actions li {
+	padding-left: 0;
 }
 
 /* Intro background slideshow (3 images) */
@@ -5109,6 +5125,12 @@ img {
 
 	#intro .actions {
 		justify-content: center;
+	}
+
+	#intro ul.actions:not(.fixed) li > .button {
+		margin-left: auto;
+		margin-right: auto;
+		width: min(100%, 15rem) !important;
 	}
 
 	/* Spotlight cards stack with responsive media and consistent insets. */
