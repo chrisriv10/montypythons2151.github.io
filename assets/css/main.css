@@ -3498,10 +3498,16 @@ text-transform: uppercase;
 		}
 
 			#header > .title img {
+				background: #ffffff;
+				border: solid 2px #ffd84d;
+				border-radius: 50%;
 				display: block;
 				height: auto;
 				max-height: 7em;
-				width: auto;
+				max-width: 7em;
+				object-fit: contain;
+				padding: 0.65rem;
+				width: 7em;
 			}
 
 		#header > .header-brand {
