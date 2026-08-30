@@ -4162,8 +4162,9 @@ text-transform: uppercase;
 
 #one.spotlights > section > .content > .inner {
     background: rgba(49, 36, 80, 0.78);
-    border: solid 2px rgba(255, 216, 77, 0.3);
+    border: solid 2px #ffd84d;
     border-radius: 14px;
+    box-shadow: 0 0 0.8rem rgba(255, 216, 77, 0.16);
     padding: 2em;
 }
 
@@ -5153,6 +5154,7 @@ img {
 
 	#one.spotlights > section > .content > .inner {
 		padding: clamp(1.35rem, 5vw, 1.75rem);
+		border-color: #ffd84d !important;
 	}
 
 	#one.spotlights p {
