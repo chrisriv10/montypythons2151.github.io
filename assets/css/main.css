@@ -4115,12 +4115,21 @@ text-transform: uppercase;
 }
 
 /* Give the long About Us copy a quiet surface so it stays legible over purple. */
-.about-copy {
+.about-copy,
+.sponsor-intro-copy {
     background: linear-gradient(135deg, rgba(49, 36, 80, 0.48), rgba(49, 36, 80, 0.28));
     border: solid 1px rgba(255, 216, 77, 0.28);
     border-radius: 1rem;
     box-shadow: 0 0.8rem 2rem rgba(22, 12, 46, 0.16);
     padding: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.sponsor-intro-copy {
+    margin-bottom: 1.5rem;
+}
+
+.sponsor-intro-copy > p:last-child {
+    margin-bottom: 0;
 }
 
 .spotlights p,
@@ -5101,7 +5110,8 @@ img {
 		transition: none;
 	}
 
-	.about-copy > p {
+	.about-copy > p,
+	.sponsor-intro-copy > p {
 		margin-bottom: 1.35rem;
 	}
 
