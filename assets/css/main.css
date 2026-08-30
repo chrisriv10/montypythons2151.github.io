@@ -4285,26 +4285,10 @@ text-transform: uppercase;
     overflow: hidden;
 }
 
-.instagram-feed-placeholder {
-    align-items: center;
-    color: rgba(255, 255, 255, 0.78);
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-    justify-content: center;
+.instagram-feed-shell behold-widget {
+    display: block;
     min-height: 12rem;
-    padding: 2rem;
-    text-align: center;
-}
-
-.instagram-feed-placeholder .icon {
-    color: #ffd84d;
-    font-size: 2rem;
-}
-
-.instagram-feed-placeholder p {
-    color: #ffffff;
-    margin: 0;
+    width: 100%;
 }
 
 .instagram-feed-actions {
@@ -5399,7 +5383,7 @@ img {
 		min-height: 10rem;
 	}
 
-	.instagram-feed-placeholder {
+	.instagram-feed-shell behold-widget {
 		min-height: 10rem;
 	}
 
