@@ -4792,9 +4792,9 @@ img {
 .sponsor-fund-photo,
 .sponsor-accept-photo {
     background: rgba(49, 36, 80, 0.52);
-    border: solid 1px rgba(255, 216, 77, 0.32);
+    border: solid 2px #ffd84d;
     border-radius: 0.75rem;
-    box-shadow: 0 0.5rem 1.5rem rgba(22, 12, 46, 0.18);
+    box-shadow: 0 0.5rem 1.5rem rgba(22, 12, 46, 0.18), 0 0 0.75rem rgba(255, 216, 77, 0.14);
     margin: 0;
     overflow: hidden;
 }
