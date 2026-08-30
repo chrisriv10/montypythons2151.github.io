@@ -4092,9 +4092,13 @@ text-transform: uppercase;
 }
 
 .team-logo {
-    width: 220px;      
-    height: auto;
-    border-radius: 8px; 
+    background: rgba(49, 36, 80, 0.35);
+    border: solid 2px #ffd84d;
+    border-radius: 50%;
+    height: 220px;
+    object-fit: contain;
+    padding: 0.65rem;
+    width: 220px;
 }
 
 /* Positioning for team logo */
@@ -4872,9 +4876,10 @@ img {
 	}
 
 	#sidebar .team-logo {
-		border-radius: 0.4rem;
+		border-radius: 50%;
 		height: 3rem;
 		object-fit: contain;
+		padding: 0.2rem;
 		width: 3rem;
 	}
 
