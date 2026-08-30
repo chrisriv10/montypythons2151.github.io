@@ -4261,25 +4261,42 @@ text-transform: uppercase;
     object-fit: contain;
 }
 
-/* Live Instagram profile embed. The iframe keeps the feed current without exposing API credentials. */
-.instagram-feed-shell {
+/* Instagram profile card links directly to the live feed without a fragile iframe embed. */
+.instagram-profile-card {
+    align-items: center;
     background: rgba(49, 36, 80, 0.52);
     border: solid 2px #ffd84d;
+    display: flex;
+    gap: 1.25rem;
     border-radius: 1rem;
     box-shadow: 0 0.8rem 2rem rgba(22, 12, 46, 0.2), 0 0 0.8rem rgba(255, 216, 77, 0.14);
     margin: 2rem auto 0;
     max-width: 54rem;
-    overflow: hidden;
+    padding: clamp(1.25rem, 4vw, 2rem);
 }
 
-.instagram-feed {
-    background: #ffffff;
-    border: 0;
-    border-radius: 0;
-    display: block;
-    height: 52rem;
-    max-width: 100%;
-    width: 100%;
+.instagram-profile-icon {
+    align-items: center;
+    background: linear-gradient(135deg, #ffd84d, #f05bb5 55%, #7b4bd1);
+    border-radius: 1rem;
+    color: #ffffff;
+    display: flex;
+    flex: 0 0 4.5rem;
+    font-size: 2.2rem;
+    height: 4.5rem;
+    justify-content: center;
+    width: 4.5rem;
+}
+
+.instagram-profile-card h3 {
+    color: #ffffff;
+    font-size: clamp(1.05rem, 3vw, 1.35rem);
+    margin: 0 0 0.35rem;
+}
+
+.instagram-profile-card p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
 }
 
 .instagram-feed-actions {
@@ -5369,12 +5386,18 @@ img {
 		overflow-wrap: anywhere;
 	}
 
-	.instagram-feed-shell {
+	.instagram-profile-card {
+		align-items: flex-start;
+		gap: 1rem;
 		margin-top: 1.5rem;
 	}
 
-	.instagram-feed {
-		height: clamp(32rem, 118vw, 42rem);
+	.instagram-profile-icon {
+		border-radius: 0.8rem;
+		flex-basis: 3.5rem;
+		font-size: 1.8rem;
+		height: 3.5rem;
+		width: 3.5rem;
 	}
 
 	.instagram-feed-actions {
