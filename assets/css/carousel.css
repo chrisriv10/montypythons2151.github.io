@@ -8,7 +8,7 @@
 
 .track {
   display: flex;
-  animation: slide 16s infinite;
+  animation: slide 20s infinite;
 }
 
 .track img {
@@ -20,10 +20,10 @@
 }
 
 @keyframes slide {
-  0%, 28% { transform: translateX(0); }
-  33%, 61% { transform: translateX(-100%); }
-  66%, 94% { transform: translateX(-200%); }
-  100% { transform: translateX(0); }
+  0%, 22% { transform: translateX(0); }
+  25%, 47% { transform: translateX(-100%); }
+  50%, 72% { transform: translateX(-200%); }
+  75%, 100% { transform: translateX(-300%); }
 }
 
 @media screen and (max-width: 736px) {
