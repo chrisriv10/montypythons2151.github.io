@@ -26,7 +26,7 @@
 	<meta name="twitter:title" content="Monty Robot | FRC Team 2151" />
 	<meta name="twitter:description" content="Meet Monty, the Monty Pythons’ 2026 competition robot." />
 	<meta name="twitter:image" content="https://frc2151.tech/assets/css/images/Robot.png" />
-	<link rel="stylesheet" href="assets/css/main.css?v=44" />
+	<link rel="stylesheet" href="assets/css/main.css?v=45" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -64,11 +64,11 @@
 				<h1 class="major">Meet Monty</h1>
 				<section class="monty-profile">
 					<img src="assets/css/images/Robot.png" alt="Monty, FRC Team 2151's 2026 competition robot" />
-					<div class="monty-stats flip-card">
-						<button class="flip-toggle" type="button" aria-label="Show off-season stats" aria-expanded="false">
+					<div class="monty-stats flip-card" data-face="0">
+						<button class="flip-toggle" type="button" aria-label="Show off-season stats" aria-controls="event-card-faces">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18" /></svg>
 						</button>
-						<div class="flip-inner">
+						<div class="flip-inner" id="event-card-faces" aria-live="polite">
 							<div class="flip-face flip-front">
 								<h2>2026 Midwest Regional Performance</h2>
 								<ul>
@@ -94,20 +94,20 @@
 								</ul>
 								<img src="assets/css/images/FRCRebuilt.png" alt="2026 REBUILT season logo" class="rebuilt-logo" loading="lazy" />
 							</div>
+							<div class="flip-face flip-third">
+								<h2>2026 SHOUT Robotics Competition</h2>
+								<ul>
+									<li><strong>Event:</strong> SHOUT Robotics Competition</li>
+									<li><strong>Location:</strong> Milwaukee, Wisconsin</li>
+									<li><strong>Dates:</strong> October 17, 2026</li>
+									<li><strong>Qualification Rank:</strong> TBD</li>
+									<li><strong>Record:</strong> TBD</li>
+									<li><strong>Playoffs:</strong> TBD</li>
+								</ul>
+								<img src="assets/css/images/FRCRebuilt.png" alt="2026 REBUILT season logo" class="rebuilt-logo" loading="lazy" />
+							</div>
 						</div>
 					</div>
-				</section>
-				<section class="monty-stats event-card" aria-labelledby="shout-event-title">
-					<h2 id="shout-event-title">2026 SHOUT Robotics Competition</h2>
-					<ul>
-						<li><strong>Event:</strong> SHOUT Robotics Competition</li>
-						<li><strong>Location:</strong> Milwaukee, Wisconsin</li>
-						<li><strong>Dates:</strong> October 17, 2026</li>
-						<li><strong>Qualification Rank:</strong> TBD</li>
-						<li><strong>Record:</strong> TBD</li>
-						<li><strong>Playoffs:</strong> TBD</li>
-					</ul>
-					<img src="assets/css/images/FRCRebuilt.png" alt="2026 REBUILT season logo" class="rebuilt-logo" loading="lazy" />
 				</section>
 			</div>
 		</section>
@@ -156,16 +156,20 @@
 	<script src="assets/js/main.js?v=7"></script>
 	<script>
 		(function () {
-			var card = document.querySelector('.monty-stats');
+			var card = document.querySelector('.flip-card');
 			var toggle = document.querySelector('.flip-toggle');
 			if (!card || !toggle) {
 				return;
 			}
 			toggle.addEventListener('click', function () {
-				var flipped = card.classList.toggle('flipped');
-				toggle.classList.toggle('flipped', flipped);
-				toggle.setAttribute('aria-expanded', flipped ? 'true' : 'false');
-				toggle.setAttribute('aria-label', flipped ? 'Show regional stats' : 'Show off-season stats');
+				var face = (parseInt(card.getAttribute('data-face'), 10) + 1) % 3;
+				card.setAttribute('data-face', face);
+				toggle.classList.toggle('flipped', face !== 0);
+				toggle.setAttribute('aria-label', [
+					'Show off-season stats',
+					'Show SHOUT event details',
+					'Show regional stats'
+				][face]);
 			});
 		})();
 	</script>
