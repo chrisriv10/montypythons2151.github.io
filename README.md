@@ -10,7 +10,7 @@ FIRST Robotics Competition team dedicated to engineering, programming, leadershi
 
 - **Home** (`index.html`) - Hero, About Us and robot spotlights, departments, live Instagram media, and contact form
 - **About** (`about.html`) - Team history, values, and achievements
-- **Our Robot** (`monty.html`) - Monty's details for the 2026 REBUILT season
+- **Our Robot** (`monty.html`) - Monty's details for the 2026 REBUILT season and upcoming SHOUT Robotics Competition
 - **Sponsors** (`sponsors.html`) - Sponsor recognition and partnership info
 
 The public pages share responsive mobile navigation, branded gold accents, accessible focus states, and layouts tuned for common phone widths. Sponsor sections include contribution, funding, and benefits cards with team photography. The About page includes a responsive team-photo carousel, and the Home page includes a live Behold Instagram feed for [@montypythons2151](https://www.instagram.com/montypythons2151/).

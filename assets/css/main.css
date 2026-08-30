@@ -4593,6 +4593,24 @@ text-transform: uppercase;
     padding: 2em;
 }
 
+.event-card {
+    background: linear-gradient(145deg, #2b0f45, #3d1660);
+    border: solid 2px #ffd84d;
+    border-radius: 14px;
+    box-shadow: 0 0 0.8rem rgba(255, 216, 77, 0.16);
+    margin-top: 3em;
+}
+
+.event-card-intro {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.25em;
+}
+
+.event-card-actions {
+    justify-content: flex-start;
+    margin: 1.5em 0 0;
+}
+
 .monty-stats ul {
     list-style: none;
     margin: 0;
