@@ -13,7 +13,7 @@ FIRST Robotics Competition team dedicated to engineering, programming, leadershi
 - **Our Robot** (`monty.html`) - Monty's details for the 2026 REBUILT season
 - **Sponsors** (`sponsors.html`) - Sponsor recognition and partnership info
 
-The public pages share responsive mobile navigation, branded gold accents, accessible focus states, and layouts tuned for common phone widths. Sponsor sections include contribution, funding, and benefits cards with team photography. The About page includes a responsive team-photo carousel, and the Home page's Media section presents reliable team-photo highlights with links to [@montypythons2151](https://www.instagram.com/montypythons2151/) for the latest posts.
+The public pages share responsive mobile navigation, branded gold accents, accessible focus states, and layouts tuned for common phone widths. Sponsor sections include contribution, funding, and benefits cards with team photography. The About page includes a responsive team-photo carousel, and the Home page includes a styled container ready for a connected Instagram feed, plus a link to [@montypythons2151](https://www.instagram.com/montypythons2151/) for the latest posts.
 
 ## Contact
 

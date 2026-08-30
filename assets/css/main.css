@@ -4272,53 +4272,39 @@ text-transform: uppercase;
     object-fit: contain;
 }
 
-/* Reliable, lightweight Instagram highlights that never depend on a profile iframe. */
-.instagram-gallery {
-    display: grid;
-    gap: 1.25rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin: 2rem auto 0;
-    max-width: 62rem;
-}
-
-.instagram-gallery-card {
+/* Feed shell reserved for the connected Instagram widget. */
+.instagram-feed-shell {
     background: linear-gradient(145deg, #2b0f45, #3d1660);
     border: solid 2px #ffd84d;
     border-radius: 1rem;
     box-shadow: 0 0.8rem 2rem rgba(22, 12, 46, 0.18), 0 0 0.8rem rgba(255, 216, 77, 0.12);
-    color: #ffffff;
     display: block;
+    margin: 2rem auto 0;
+    max-width: 54rem;
+    min-height: 12rem;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.instagram-gallery-card:hover,
-.instagram-gallery-card:focus-visible {
-    box-shadow: 0 1rem 2rem rgba(22, 12, 46, 0.28), 0 0 1rem rgba(255, 216, 77, 0.28);
-    color: #ffffff;
-    transform: translateY(-0.2rem);
-}
-
-.instagram-gallery-card figure {
-    margin: 0;
-}
-
-.instagram-gallery-card img {
-    aspect-ratio: 4 / 3;
-    border: 0;
-    border-radius: 0;
-    display: block;
-    object-fit: cover;
-    width: 100%;
-}
-
-.instagram-gallery-card figcaption {
-    color: #ffffff;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    padding: 0.8rem 1rem 0.9rem;
+.instagram-feed-placeholder {
+    align-items: center;
+    color: rgba(255, 255, 255, 0.78);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    justify-content: center;
+    min-height: 12rem;
+    padding: 2rem;
     text-align: center;
+}
+
+.instagram-feed-placeholder .icon {
+    color: #ffd84d;
+    font-size: 2rem;
+}
+
+.instagram-feed-placeholder p {
+    color: #ffffff;
+    margin: 0;
 }
 
 .instagram-feed-actions {
@@ -5408,10 +5394,13 @@ img {
 		overflow-wrap: anywhere;
 	}
 
-	.instagram-gallery {
-		gap: 1rem;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
+	.instagram-feed-shell {
 		margin-top: 1.5rem;
+		min-height: 10rem;
+	}
+
+	.instagram-feed-placeholder {
+		min-height: 10rem;
 	}
 
 	.instagram-feed-actions {
