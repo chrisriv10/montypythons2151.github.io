@@ -4284,6 +4284,8 @@ text-transform: uppercase;
 }
 
 .rebuilt-logo {
+    border: 0;
+    border-radius: 0;
     display: block;
     margin: 2em auto 0 auto;
     max-height: 9em;
