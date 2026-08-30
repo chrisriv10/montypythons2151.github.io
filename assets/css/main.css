@@ -4138,6 +4138,18 @@ text-transform: uppercase;
     padding: clamp(1.25rem, 3vw, 2.25rem);
 }
 
+.about-copy .about-subheading {
+    color: #ffd84d;
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.55rem;
+    text-transform: uppercase;
+}
+
+.about-copy .about-subheading:not(:first-child) {
+    margin-top: 1.35rem;
+}
+
 .sponsor-intro-copy {
     margin-bottom: 1.5rem;
 }
