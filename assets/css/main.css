@@ -4642,6 +4642,28 @@ text-transform: uppercase;
     border-radius: 12px;
 }
 
+/* Consistent gold edging gives content imagery a finished, branded frame. */
+img {
+    border: solid 2px rgba(255, 216, 77, 0.68);
+    border-radius: 0.5rem;
+}
+
+/* Marquee logos are already grouped by their strip containers. */
+.sponsor-track img,
+.sponsor-bar-track img,
+.sponsor-receive-photo img,
+.sponsor-fund-photo img,
+.sponsor-accept-photo img {
+    border: 0;
+    border-radius: 0;
+}
+
+.sponsor-slideshow,
+.sponsor-bar {
+    border-bottom: solid 2px rgba(255, 216, 77, 0.5);
+    border-top: solid 2px rgba(255, 216, 77, 0.5);
+}
+
 /* Sponsor information is grouped into lightweight cards for easier scanning. */
 .sponsor-list {
     display: grid;
