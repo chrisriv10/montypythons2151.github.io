@@ -4815,6 +4815,10 @@ img {
     margin-top: 1.25rem;
 }
 
+.sponsor-receive-layout {
+    align-items: center;
+}
+
 .sponsor-receive-layout .sponsor-list,
 .sponsor-fund-layout .sponsor-list,
 .sponsor-accept-layout .sponsor-list {
