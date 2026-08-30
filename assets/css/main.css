@@ -4693,6 +4693,24 @@ text-transform: uppercase;
     border-radius: 12px;
 }
 
+/* A slim gold rule cleanly separates the header purple from page content. */
+#header {
+    position: relative;
+}
+
+#header::after {
+    background: #ffd84d;
+    box-shadow: 0 0 0.65rem rgba(255, 216, 77, 0.3);
+    content: "";
+    height: 3px;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
 /* Consistent gold edging gives content imagery a finished, branded frame. */
 img {
     border: solid 2px rgba(255, 216, 77, 0.68);
