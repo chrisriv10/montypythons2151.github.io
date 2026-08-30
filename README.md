@@ -2,6 +2,8 @@
 
 Official website for **FRC Team 2151: Monty Pythons** from Proviso Mathematics and Science Academy in Forest Park, IL.
 
+Canonical website: [https://frc2151.tech/](https://frc2151.tech/)
+
 ## About
 
 FIRST Robotics Competition team dedicated to engineering, programming, leadership, and inspiring the next generation of innovators.
