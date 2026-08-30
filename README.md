@@ -27,4 +27,4 @@ The public pages share responsive mobile navigation, branded gold accents, acces
 ## Stack
 
 - HTML/CSS/JS
-- Hosted on GitHub Pages at `montypythons2151.github.io`
+- Hosted on GitHub Pages with the custom domain [frc2151.tech](https://frc2151.tech)
