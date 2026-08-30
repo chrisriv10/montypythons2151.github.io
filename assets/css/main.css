@@ -4168,6 +4168,22 @@ text-transform: uppercase;
     padding: 2em;
 }
 
+/* Gold divider between the spotlight image and its content card on wider layouts. */
+@media screen and (min-width: 737px) {
+    #one.spotlights > section > .image::after {
+        background: #ffd84d;
+        box-shadow: 0 0 0.8rem rgba(255, 216, 77, 0.28);
+        content: "";
+        height: 100%;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 3px;
+        z-index: 2;
+    }
+}
+
 #two > .inner > h2,
 #two > .inner > p {
     background: rgba(49, 36, 80, 0.78);
