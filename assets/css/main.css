@@ -4342,6 +4342,7 @@ text-transform: uppercase;
 }
 
 #intro ul.actions {
+	max-width: 34em;
 	justify-content: center;
 	margin-left: 0;
 }
