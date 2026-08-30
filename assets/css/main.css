@@ -4111,6 +4111,10 @@ text-transform: uppercase;
     padding-top: 0; 
 }
 
+#sidebar > .inner > .header-brand {
+    display: none;
+}
+
 #wrapper > .wrapper > .inner > section > p,
 #main.wrapper p {
     color: rgba(255, 255, 255, 0.88);
@@ -4914,6 +4918,34 @@ img {
 		width: 3rem;
 	}
 
+	#sidebar > .inner > .header-brand {
+		align-self: center;
+		color: #ffffff;
+		display: block;
+		font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+		font-size: clamp(0.7rem, 3.4vw, 1rem);
+		font-weight: 800;
+		line-height: 1.1;
+		min-width: 0;
+		overflow: hidden;
+		padding: 0 0 0.35rem;
+		position: relative;
+		text-align: center;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	#sidebar > .inner > .header-brand:after {
+		background-image: linear-gradient(to right, #ffd84d, #f05bb5, #ffffff);
+		border-radius: 999px;
+		bottom: 0;
+		content: '';
+		height: 0.16rem;
+		left: 0;
+		position: absolute;
+		right: 0;
+	}
+
 	#sidebar .mobile-nav-toggle {
 		grid-column: 3;
 		grid-row: 1;
@@ -4957,8 +4989,10 @@ img {
 
 	#sidebar nav > ul > li a {
 		align-items: center;
-		background: rgba(255, 255, 255, 0.08);
+		background: rgba(49, 36, 80, 0.92);
+		border: 1px solid rgba(255, 216, 77, 0.32);
 		border-radius: 999px;
+		color: #ffffff;
 		display: flex;
 		font-size: 0.72rem;
 		height: auto;
@@ -4970,7 +5004,8 @@ img {
 
 	#sidebar nav > ul > li a:hover,
 	#sidebar nav > ul > li a:focus-visible {
-		background: rgba(255, 255, 255, 0.14);
+		background: rgba(255, 216, 77, 0.18);
+		border-color: #ffd84d;
 		color: #ffffff;
 	}
 
@@ -5004,9 +5039,13 @@ img {
 	}
 
 	#header > .title img {
+		background: #ffffff;
+		border: 2px solid #ffd84d;
+		border-radius: 50%;
 		height: 3rem;
 		max-height: 3rem;
 		object-fit: contain;
+		padding: 0.2rem;
 		width: 3rem;
 	}
 
@@ -5047,8 +5086,10 @@ img {
 
 	#header > nav > ul > li a {
 		align-items: center;
-		background: rgba(255, 255, 255, 0.08);
+		background: rgba(49, 36, 80, 0.92);
+		border: 1px solid rgba(255, 216, 77, 0.32);
 		border-radius: 999px;
+		color: #ffffff;
 		display: flex;
 		font-size: 0.72rem;
 		height: auto;
@@ -5060,7 +5101,8 @@ img {
 
 	#header > nav > ul > li a:hover,
 	#header > nav > ul > li a:focus-visible {
-		background: rgba(255, 255, 255, 0.14);
+		background: rgba(255, 216, 77, 0.18);
+		border-color: #ffd84d;
 		color: #ffffff;
 	}
 
