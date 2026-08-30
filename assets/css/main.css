@@ -5046,9 +5046,10 @@ img {
 
 	#sidebar nav > ul > li a {
 		align-items: center;
-		background: rgba(49, 36, 80, 0.92);
+		background: #312450;
 		border: 1px solid rgba(255, 216, 77, 0.32);
 		border-radius: 999px;
+		box-shadow: 0 2px 6px rgba(24, 12, 45, 0.28);
 		color: #ffffff;
 		display: flex;
 		font-size: 0.72rem;
