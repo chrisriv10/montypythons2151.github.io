@@ -4257,6 +4257,32 @@ text-transform: uppercase;
     object-fit: contain;
 }
 
+/* Live Instagram profile embed. The iframe keeps the feed current without exposing API credentials. */
+.instagram-feed-shell {
+    background: rgba(49, 36, 80, 0.52);
+    border: solid 2px #ffd84d;
+    border-radius: 1rem;
+    box-shadow: 0 0.8rem 2rem rgba(22, 12, 46, 0.2), 0 0 0.8rem rgba(255, 216, 77, 0.14);
+    margin: 2rem auto 0;
+    max-width: 54rem;
+    overflow: hidden;
+}
+
+.instagram-feed {
+    background: #ffffff;
+    border: 0;
+    border-radius: 0;
+    display: block;
+    height: 52rem;
+    max-width: 100%;
+    width: 100%;
+}
+
+.instagram-feed-actions {
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
 .rebuilt-logo {
     display: block;
     margin: 2em auto 0 auto;
@@ -5293,6 +5319,18 @@ img {
 
 	#three .contact a {
 		overflow-wrap: anywhere;
+	}
+
+	.instagram-feed-shell {
+		margin-top: 1.5rem;
+	}
+
+	.instagram-feed {
+		height: clamp(32rem, 118vw, 42rem);
+	}
+
+	.instagram-feed-actions {
+		margin-bottom: 0.5rem;
 	}
 
 	.contact-logo-row {
