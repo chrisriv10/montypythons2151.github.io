@@ -8,12 +8,14 @@ FIRST Robotics Competition team dedicated to engineering, programming, leadershi
 
 ## Pages
 
-- **Home** (`index.html`) - Departments overview, contact info
+- **Home** (`index.html`) - Hero, About Us and robot spotlights, departments, live Instagram media, and contact form
 - **About** (`about.html`) - Team history, values, and achievements
 - **Our Robot** (`monty.html`) - Monty's details for the 2026 REBUILT season
 - **Sponsors** (`sponsors.html`) - Sponsor recognition and partnership info
-- **Donate** (`donate.html`) - Support the team
-- **Reference** (`Reference.html`) - Technical documentation
+
+The public pages share responsive mobile navigation, branded gold accents, accessible focus states, and layouts tuned for common phone widths. Sponsor sections include contribution, funding, and benefits cards with team photography. The About page includes a responsive team-photo carousel, and the Home page's Media section embeds the latest posts from [@montypythons2151](https://www.instagram.com/montypythons2151/).
+
+`Reference.html` is retained as an unlinked template and is outside the public site navigation.
 
 ## Contact
 
@@ -26,5 +28,5 @@ FIRST Robotics Competition team dedicated to engineering, programming, leadershi
 
 ## Stack
 
-- HTML/CSS/JS 
+- HTML/CSS/JS
 - Hosted on GitHub Pages at `montypythons2151.github.io`
