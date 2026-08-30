@@ -4249,6 +4249,8 @@ text-transform: uppercase;
 }
 
 .contact-logo-row img {
+    border: 0;
+    border-radius: 0;
     display: block;
     max-height: 12em;
     max-width: 22em;
