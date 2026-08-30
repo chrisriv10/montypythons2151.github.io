@@ -15,8 +15,6 @@ FIRST Robotics Competition team dedicated to engineering, programming, leadershi
 
 The public pages share responsive mobile navigation, branded gold accents, accessible focus states, and layouts tuned for common phone widths. Sponsor sections include contribution, funding, and benefits cards with team photography. The About page includes a responsive team-photo carousel, and the Home page's Media section links directly to the current posts from [@montypythons2151](https://www.instagram.com/montypythons2151/).
 
-`Reference.html` is retained as an unlinked template and is outside the public site navigation.
-
 ## Contact
 
 - **Email:** pmsarobotics@gmail.com
