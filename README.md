@@ -23,6 +23,7 @@ The public pages share responsive mobile navigation, branded gold accents, acces
 - **GitHub:** [Team-2151-Progrraming-Room](https://github.com/Team-2151-Progrraming-Room)
 - **Twitter/X:** [@frcteam2151](https://x.com/frcteam2151)
 - **Instagram:** [@montypythons2151](https://www.instagram.com/montypythons2151/)
+- **YouTube:** [PMSA Robotics](https://www.youtube.com/@PMSARobotics)
 
 ## Stack
 
